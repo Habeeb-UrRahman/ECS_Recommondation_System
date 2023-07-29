@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
 # Load and preprocess the dataset
-dataset = pd.read_csv('plant_dataset2.csv')  # Replace 'plants_data.csv' with the correct path to your dataset
+dataset = pd.read_csv('plant_attributes_data.csv')  # Replace 'plants_data.csv' with the correct path to your dataset
 # Preprocess the dataset as needed (e.g., handle missing values, encode categorical variables, etc.)
 
 # Split the dataset into training and testing sets
