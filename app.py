@@ -100,16 +100,17 @@ def main():
                     st.write(f"Plant: {plant}")
                     st.dataframe(table)
 
+# Run the app
+if __name__ == "__main__":
+    main()
+
+
 # Team details
-st.markdown("<p>VIT-AP UNIVERSITY ECS PROJECT</p>", unsafe_allow_html=True)
-st.markdown("<p>TEAM DETAILS:</p>", unsafe_allow_html=True)
+st.markdown("<h1>VIT-AP UNIVERSITY ECS PROJECT</h1w>", unsafe_allow_html=True)
+st.markdown("<h3>TEAM DETAILS:</h3>", unsafe_allow_html=True)
 st.markdown("<p>Habeeb Ur Rahman - 21BCE7005</p>", unsafe_allow_html=True)
 st.markdown("<p>Havish Ponnaganti - 21BCE8186</p>", unsafe_allow_html=True)
 st.markdown("<p>T. Jaswanth - 21BCE8600</p>", unsafe_allow_html=True)
 st.markdown("<p>Junaid Ahmed - 21BCE7925</p>", unsafe_allow_html=True)
 st.markdown("<p>B. Rahul Reddy - 21BCE7129</p>", unsafe_allow_html=True)
 st.markdown("<p>Y.B Koushik - 21BCE7807</p>", unsafe_allow_html=True)
-
-# Run the app
-if __name__ == "__main__":
-    main()
