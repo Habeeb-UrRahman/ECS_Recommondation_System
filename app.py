@@ -80,7 +80,7 @@ def main():
             conflicting_plants = [plant_name for plant_name in selected_plant_attributes if selected_plant_attributes[plant_name][attribute] in values]
             conflicting_plant_attributes = {plant: plant_attributes_combined[attribute] for plant in conflicting_plants}
             for plant, attributes in conflicting_plant_attributes.items():
-                st.subheader(f"Plant: {plant}")
+                # st.subheader(f"Plant: {plant}")
                 st.write(pd.DataFrame({attribute: attributes}))
 
 # Run the app
