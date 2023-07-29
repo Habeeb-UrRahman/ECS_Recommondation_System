@@ -50,7 +50,7 @@ def main():
     # Find the optimal attribute values for all selected plants
     optimal_attributes = {}
     conflicting_values = {}
-    plant_tables = {}
+    plant_attributes_combined = {}
 
     for attribute in dataset.columns[1:]:
         attribute_values = []
@@ -66,30 +66,22 @@ def main():
             conflicting_values[attribute] = attribute_values
 
         optimal_attributes[attribute] = optimal_value
-
-        for plant_name in selected_plant_attributes:
-            plant_table = pd.DataFrame({attribute: attribute_values})
-            if plant_name in plant_tables:
-                plant_tables[plant_name][attribute] = attribute_values
-            else:
-                plant_tables[plant_name] = plant_table
+        plant_attributes_combined[attribute] = attribute_values
 
     # Display the optimal attribute values
     st.header("Optimal Attribute Values for Selected Plants:")
-    for attribute, value in optimal_attributes.items():
-        st.write(f"{attribute}: {value}")
+    st.write(pd.DataFrame(optimal_attributes.items(), columns=['Attribute', 'Optimal Value']))
 
     # Check if attribute values vary among the selected plants and display conflicts
     if conflicting_values:
         st.header("Plants that cannot be grown together due to conflicting attribute values:")
         for attribute, values in conflicting_values.items():
-            # st.subheader(f"Attribute: {attribute}")
+            st.subheader(f"Attribute: {attribute}")
             conflicting_plants = [plant_name for plant_name in selected_plant_attributes if selected_plant_attributes[plant_name][attribute] in values]
-            conflicting_plant_tables = {plant: plant_tables[plant] for plant in conflicting_plants}
-            for plant, table in conflicting_plant_tables.items():
-                if table is not None:
-                    st.subheader(f"Plant: {plant}")
-                    st.dataframe(table)
+            conflicting_plant_attributes = {plant: plant_attributes_combined[attribute] for plant in conflicting_plants}
+            for plant, attributes in conflicting_plant_attributes.items():
+                st.subheader(f"Plant: {plant}")
+                st.write(pd.DataFrame({attribute: attributes}))
 
 # Run the app
 if __name__ == "__main__":
