@@ -107,6 +107,7 @@ if __name__ == "__main__":
 
 
 # Team details
+st.markdown("<h2>     </h2>"), unsafe_allow_html=True)
 st.markdown("<h3>TEAM DETAILS:</h3>", unsafe_allow_html=True)
 st.markdown("<p>Habeeb Ur Rahman - 21BCE7005</p>", unsafe_allow_html=True)
 st.markdown("<p>Havish Ponnaganti - 21BCE8186</p>", unsafe_allow_html=True)
