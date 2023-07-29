@@ -1,5 +1,5 @@
-import pandas as pd
 import streamlit as st
+import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 
@@ -18,8 +18,9 @@ model.fit(X_train, y_train)
 
 # Define the Streamlit app
 def main():
-    st.title('Soil Recommondation System')
+    st.title('Soil Recommendation System')
     st.write('Enter the type of plants you want to grow and get recommendations on the attributes like Turbidity, Ph, Nitrogen level, Phosphorous level, Potassium level, Humidity and Rainfall which determine the health of the soil and the type of environment best suitable for your plants.')
+
     # Accept user input for the number of plants and their names
     num_plants = st.number_input("SELECT THE NUMBER OF PLANTS", min_value=1, value=1, step=1)
     plant_names = []
@@ -100,26 +101,24 @@ def main():
                     st.write(f"Plant: {plant}")
                     st.dataframe(table)
 
-# Main content of your app
-st.write("VIT-AP UNIVERISY ECS PROJECT")
-st.write("TEAM DETAILS: \n HABEEB UR RAHMAN - 21BCE7005 \n HAVISH PONNAGANTI - 21BCE8186 \n T. JASWANTH - 21BCE8600 \n JUNAID AHMED - 21BCE7925 \n B. RAHUL REDDY - 21BCE7129 \n Y.B KOUSHIK - 21BCE7807")
+    # Add details at the end of the interface
+    st.markdown(
+        """
+        <style>
+        /* CSS styling for the faded text */
+        .faded-text {
+            color: rgba(0, 0, 0, 0.4);
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
 
-# Details in faded text at the end of the interface
-st.markdown(
-    """
-    <style>
-    /* CSS styling for the faded text */
-    .faded-text {
-        color: rgba(0, 0, 0, 0.4); /* Adjust the alpha value (last value) to control the opacity */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
-
-# The faded text
-st.markdown("<p class='faded-text'>Additional details go here.</p>", unsafe_allow_html=True)
-
+    # The faded text
+    st.markdown(
+        "<p class='faded-text'>VIT-AP UNIVERSITY ECS PROJECT\nTEAM DETAILS: HABEEB UR RAHMAN - 21BCE7005<br>HAVISH PONNAGANTI - 21BCE8186<br>T. JASWANTH - 21BCE8600<br>JUNAID AHMED - 21BCE7925<br>B. RAHUL REDDY - 21BCE7129<br>Y.B KOUSHIK - 21BCE7807</p>",
+        unsafe_allow_html=True,
+    )
 
 # Run the app
 if __name__ == "__main__":
