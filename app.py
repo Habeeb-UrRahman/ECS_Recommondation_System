@@ -83,12 +83,12 @@ def main():
     if conflicting_values:
         st.header("Plants that cannot be grown together due to conflicting attribute values:")
         for attribute, values in conflicting_values.items():
-            st.subheader(f"Attribute: {attribute}")
+            # st.subheader(f"Attribute: {attribute}")
             conflicting_plants = [plant_name for plant_name in selected_plant_attributes if selected_plant_attributes[plant_name][attribute] in values]
             conflicting_plant_tables = {plant: plant_tables[plant] for plant in conflicting_plants}
             for plant, table in conflicting_plant_tables.items():
                 if table is not None:
-                    st.write(f"Plant: {plant}")
+                    st.subheader(f"Plant: {plant}")
                     st.dataframe(table)
 
 # Run the app
