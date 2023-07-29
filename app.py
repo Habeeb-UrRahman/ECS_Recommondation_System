@@ -19,7 +19,7 @@ model.fit(X_train, y_train)
 # Define the Streamlit app
 def main():
     st.title('Soil Recommondation System')
-    st.write('Enter the type of plants yoou want to grow and get recommendation on the different attributes to maintain a healthy soil for your plants')
+    st.write('Enter the type of plants you want to grow and get recommendations on the attributes like Turbidity, Ph, Nitrogen level, Phosphorous level, Potassium level, Humidity and Rainfall which determine the health of the soil and the type of environment best suitable for your plants.')
     # Accept user input for the number of plants and their names
     num_plants = st.number_input("SELECT THE NUMBER OF PLANTS", min_value=1, value=1, step=1)
     plant_names = []
@@ -100,6 +100,8 @@ def main():
                     st.write(f"Plant: {plant}")
                     st.dataframe(table)
 
+print("VIT-AP UNIVERISY ECS PROJECT")
+print("TEAM DETAILS: \n HABEEB UR RAHMAN - 21BCE7005 \n HAVISH PONNAGANTI - 21BCE8186 \n T. JASWANTH - 21BCE8600 \n JUNAID AHMED - 21BCE7925 \n B. RAHUL REDDY - 21BCE7129 \n Y.B KOUSHIK - 21BCE7807")
 # Run the app
 if __name__ == "__main__":
     main()
