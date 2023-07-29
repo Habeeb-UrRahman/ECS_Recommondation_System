@@ -37,52 +37,7 @@ def main():
         else:
             st.warning(f"Plant '{plant_name}' is not a valid input here.")
 
-    # Generate recommendations for each plant
-    recommendations = {}
-    for plant_name, plant_attributes in selected_plant_attributes.items():
-        if plant_name in dataset['label'].unique():
-            # Convert plant_attributes to DataFrame to preserve feature names
-            plant_attributes_df = pd.DataFrame([plant_attributes], columns=X.columns)
-            predicted_label = model.predict(plant_attributes_df)[0]
-            plant_recommendations = dataset[dataset['label'] == predicted_label].iloc[0].drop('label')
-            recommendations[plant_name] = plant_recommendations
-        else:
-            st.warning(f"Plant '{plant_name}' is not a valid input here.")
-
-    # Display the recommendations
-    st.header("Recommendations:")
-    for plant_name, plant_recommendations in recommendations.items():
-        st.subheader(f"For {plant_name}:")
-        st.dataframe(plant_recommendations)
-
-    # Find the optimal attribute values for all selected plants
-    optimal_attributes = {}
-    conflicting_values = {}
-    plant_tables = {}
-
-    for attribute in dataset.columns[1:]:
-        attribute_values = []
-
-        for plant_name in plant_names:
-            if plant_name in selected_plant_attributes:
-                attribute_value = selected_plant_attributes[plant_name][attribute]
-                attribute_values.append(attribute_value)
-
-        if len(set(attribute_values)) == 1:
-            optimal_value = attribute_values[0]
-        else:
-            optimal_value = "Varies"
-            conflicting_values[attribute] = attribute_values
-
-        optimal_attributes[attribute] = optimal_value
-
-        for plant_name in plant_names:
-            if plant_name in selected_plant_attributes:
-                plant_table = pd.DataFrame({attribute: attribute_values})
-                if plant_name in plant_tables:
-                    plant_tables[plant_name][attribute] = attribute_values
-                else:
-                    plant_tables[plant_name] = plant_table
+    # ... rest of the code ...
 
     # Display the optimal attribute values
     st.header("Optimal Attribute Values for Selected Plants:")
@@ -101,25 +56,18 @@ def main():
                     st.write(f"Plant: {plant}")
                     st.dataframe(table)
 
-    # Add details at the end of the interface
-    st.markdown(
-        """
-        <style>
-        /* CSS styling for the faded text */
-        .faded-text {
-            color: rgba(0, 0, 0, 0.4);
-        }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
 
-    # The faded text
-    st.markdown(
-        "<p class='faded-text'>VIT-AP UNIVERSITY ECS PROJECT\nTEAM DETAILS: HABEEB UR RAHMAN - 21BCE7005<br>HAVISH PONNAGANTI - 21BCE8186<br>T. JASWANTH - 21BCE8600<br>JUNAID AHMED - 21BCE7925<br>B. RAHUL REDDY - 21BCE7129<br>Y.B KOUSHIK - 21BCE7807</p>",
-        unsafe_allow_html=True,
-    )
+    # Team details
+    st.markdown("<p>VIT-AP UNIVERSITY ECS PROJECT</p>", unsafe_allow_html=True)
+    st.markdown("<p>TEAM DETAILS:</p>", unsafe_allow_html=True)
+    st.markdown("<p>Habeeb Ur Rahman - 21BCE7005</p>", unsafe_allow_html=True)
+    st.markdown("<p>Havish Ponnaganti - 21BCE8186</p>", unsafe_allow_html=True)
+    st.markdown("<p>T. Jaswanth - 21BCE8600</p>", unsafe_allow_html=True)
+    st.markdown("<p>Junaid Ahmed - 21BCE7925</p>", unsafe_allow_html=True)
+    st.markdown("<p>B. Rahul Reddy - 21BCE7129</p>", unsafe_allow_html=True)
+    st.markdown("<p>Y.B Koushik - 21BCE7807</p>", unsafe_allow_html=True)
 
 # Run the app
 if __name__ == "__main__":
     main()
+
