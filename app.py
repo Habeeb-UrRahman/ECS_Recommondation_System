@@ -18,15 +18,15 @@ model.fit(X_train, y_train)
 
 # Define the Streamlit app
 def main():
-    st.title('Plant Recommendation App')
-
+    st.title('Soil Recommondation System')
+    st.write('Enter the type of plants yoou want to grow and get recommendation on the different attributes to maintain a healthy soil for your plants')
     # Accept user input for the number of plants and their names
-    num_plants = st.number_input("How many plants do you want to grow?", min_value=1, value=1, step=1)
+    num_plants = st.number_input("SELECT THE NUMBER OF PLANTS", min_value=1, value=1, step=1)
     plant_names = []
     selected_plant_attributes = {}
 
     for i in range(num_plants):
-        plant_name = st.text_input(f"Plant {i+1} name:")
+        plant_name = st.text_input(f"PLANT {i+1} NAME:")
         plant_names.append(plant_name)
 
         # Find the row for the selected plant
