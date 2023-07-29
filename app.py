@@ -100,8 +100,27 @@ def main():
                     st.write(f"Plant: {plant}")
                     st.dataframe(table)
 
-print("VIT-AP UNIVERISY ECS PROJECT")
-print("TEAM DETAILS: \n HABEEB UR RAHMAN - 21BCE7005 \n HAVISH PONNAGANTI - 21BCE8186 \n T. JASWANTH - 21BCE8600 \n JUNAID AHMED - 21BCE7925 \n B. RAHUL REDDY - 21BCE7129 \n Y.B KOUSHIK - 21BCE7807")
+# Main content of your app
+st.write("VIT-AP UNIVERISY ECS PROJECT")
+st.write("TEAM DETAILS: \n HABEEB UR RAHMAN - 21BCE7005 \n HAVISH PONNAGANTI - 21BCE8186 \n T. JASWANTH - 21BCE8600 \n JUNAID AHMED - 21BCE7925 \n B. RAHUL REDDY - 21BCE7129 \n Y.B KOUSHIK - 21BCE7807")
+
+# Details in faded text at the end of the interface
+st.markdown(
+    """
+    <style>
+    /* CSS styling for the faded text */
+    .faded-text {
+        color: rgba(0, 0, 0, 0.4); /* Adjust the alpha value (last value) to control the opacity */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+# The faded text
+st.markdown("<p class='faded-text'>Additional details go here.</p>", unsafe_allow_html=True)
+
+
 # Run the app
 if __name__ == "__main__":
     main()
