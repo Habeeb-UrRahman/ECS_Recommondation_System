@@ -19,7 +19,7 @@ model.fit(X_train, y_train)
 # Define the Streamlit app
 def main():
     st.markdown("<h1>VIT-AP UNIVERSITY ECS PROJECT</h1w>", unsafe_allow_html=True)
-    st.title('Soil Recommendation System')
+    st.title('Soil Attributes Recommendation System')
     st.write('Enter the type of plants you want to grow and get recommendations on the attributes like Turbidity, Ph, Nitrogen level, Phosphorous level, Potassium level, Humidity and Rainfall which determine the health of the soil and the type of environment best suitable for your plants.')
 
     # Get the list of unique plant names from the dataset
@@ -87,11 +87,11 @@ def main():
 if __name__ == "__main__":
     main()
 
-# Team details
-st.markdown("<h3>TEAM DETAILS:</h3>", unsafe_allow_html=True)
-st.markdown("<p>Habeeb Ur Rahman - 21BCE7005</p>", unsafe_allow_html=True)
-st.markdown("<p>Havish Ponnaganti - 21BCE8186</p>", unsafe_allow_html=True)
-st.markdown("<p>T. Jaswanth - 21BCE8600</p>", unsafe_allow_html=True)
-st.markdown("<p>Junaid Ahmed - 21BCE7925</p>", unsafe_allow_html=True)
-st.markdown("<p>B. Rahul Reddy - 21BCE7129</p>", unsafe_allow_html=True)
-st.markdown("<p>Y.B Koushik - 21BCE7807</p>", unsafe_allow_html=True)
+# # Team details
+# st.markdown("<h3>TEAM DETAILS:</h3>", unsafe_allow_html=True)
+# st.markdown("<p>Habeeb Ur Rahman - 21BCE7005</p>", unsafe_allow_html=True)
+# st.markdown("<p>Havish Ponnaganti - 21BCE8186</p>", unsafe_allow_html=True)
+# st.markdown("<p>T. Jaswanth - 21BCE8600</p>", unsafe_allow_html=True)
+# st.markdown("<p>Junaid Ahmed - 21BCE7925</p>", unsafe_allow_html=True)
+# st.markdown("<p>B. Rahul Reddy - 21BCE7129</p>", unsafe_allow_html=True)
+# st.markdown("<p>Y.B Koushik - 21BCE7807</p>", unsafe_allow_html=True)
